@@ -56,6 +56,18 @@
   .proj h3{font-family:var(--display);font-weight:700;font-size:clamp(1.05rem,2.6vw,1.6rem);letter-spacing:-.02em;line-height:1.2}
   .proj p{grid-column:2;max-width:60ch}
   .proj .go{grid-row:1 / span 2;grid-column:3;font-size:2rem;font-weight:700}
+  .pj{display:block;padding:0;overflow:hidden}
+  .pj summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:8px 22px;align-items:center;padding:22px 26px}
+  .pj summary::-webkit-details-marker{display:none}
+  .pj .go{transition:transform .25s;font-size:2rem;font-weight:700;line-height:1}
+  .pj[open] .go{transform:rotate(45deg)}
+  .pj .pl{display:flex;justify-content:center;gap:18px;padding:22px 26px 26px;margin:0 14px 14px;border-radius:20px;background:#0f1d3d;animation:plin .25s ease}
+  @keyframes plin{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  .pj .pl a{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:150px;padding:24px 20px;border-radius:18px;border:1.5px solid rgba(243,201,105,.45);color:#f3c969;text-decoration:none;transition:transform .2s,background .2s}
+  .pj .pl a:hover{transform:translateY(-3px);background:rgba(243,201,105,.12)}
+  .pj .lg{width:52px;height:52px;fill:currentColor}
+  .pj .lg path[stroke]{fill:none}
+  .pj .pl span{font-size:.9rem;font-weight:700;color:#fff}
 
   .cert{display:flex;gap:22px;align-items:center;max-width:720px;padding:28px}
   .cert .ic{flex:none;width:76px;height:76px;border-radius:calc(var(--r) * .7);background:var(--cert-ic-bg);color:var(--cert-ic-fg);display:flex;align-items:center;justify-content:center;font-size:2.2rem}
@@ -112,7 +124,7 @@
   .thumbs .shot figcaption{font-size:.88rem;padding:10px 14px;width:0;min-width:100%}
   .hint{margin-top:14px;font-size:.9rem;opacity:.75}
   @media(max-width:860px){.about{grid-template-columns:1fr}.award{grid-template-columns:1fr}.photos{grid-template-columns:1fr}.photos .shot img{height:auto;max-height:520px}.award-text{position:static}}
-  @media(max-width:600px){.proj{grid-template-columns:auto 1fr;padding:18px}.proj .go{display:none}}
+  @media(max-width:600px){.proj{grid-template-columns:auto 1fr;padding:18px}.proj .go{display:none}.proj.pj{padding:0}.pj summary{grid-template-columns:auto 1fr;padding:18px}.pj .go{display:none}.pj .pl{padding:16px 10px 18px;gap:10px}.pj .pl a{min-width:0;flex:1}}
   @media(max-width:480px){.tiles{gap:16px}.tile .ic{width:72px;height:72px}.tile .ic svg{width:40px;height:40px}}
 
   :root{
@@ -316,7 +328,7 @@
 
   <section id="projects" aria-labelledby="projects-h">
     <div class="hd"><h2 id="projects-h">Other projects</h2></div>
-    <a class="proj" href="https://github.com/saadkasani/careerpath-ai" target="_blank" rel="noopener"><span class="n">1</span><h3>CareerPath AI</h3><span class="go" aria-hidden="true">↗</span></a>
+    <details class="proj pj"><summary><span class="n">1</span><h3>CareerPath AI</h3><span class="go" aria-hidden="true">+</span></summary><div class="pl"><a href="https://github.com/saadkasani/careerpath-ai" target="_blank" rel="noopener" aria-label="GitHub"><svg class="lg" viewBox="0 0 24 24" role="img" aria-label="GitHub"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a><a href="https://careerpath-ai-saad.netlify.app" target="_blank" rel="noopener" aria-label="Netlify"><svg class="lg" viewBox="0 0 24 24" role="img" aria-label="Netlify"><path d="M12 1.6 22.4 12 12 22.4 1.6 12z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 7v10M7 12h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Netlify</span></a></div></details>
     <a class="proj" href="#"><span class="n">2</span><h3>Coming soon</h3><span class="go" aria-hidden="true">↗</span></a>
     <a class="proj" href="#"><span class="n">3</span><h3>Coming soon</h3><span class="go" aria-hidden="true">↗</span></a>
   </section>
